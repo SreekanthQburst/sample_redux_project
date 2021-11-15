@@ -4,10 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 // css
 import "../css/List.css";
-
-import api from "../api";
-import { remove_sublist, selectedUser, setUsers, updatePage } from "../redux/actions/UserActions";
-import UserDetails from "./UserDetails";
+import { selectedUser, setUsers, updatePage } from "../redux/actions/UserActions";
 
 export default function List() {
   const dispatch = useDispatch();
@@ -33,7 +30,6 @@ export default function List() {
 
   // navigate to userdetails page
   const UserDetails=(user)=>{
-    dispatch(remove_sublist())
     dispatch(selectedUser(user))
     navigate(`/user/${user.login.username}`)
   }
@@ -50,7 +46,7 @@ export default function List() {
                 className="card"
                 onClick={() => UserDetails(user)}
               >
-                <img src={user.picture.large} />
+                <img src={user.picture.large} alt="Loading"/>
                 <span className="name">{`Name: ${user.name.title} ${user.name.first} ${user.name.last}`}</span>
                 <span className="email">{`Email: ${user.email}`}</span>
               </div>

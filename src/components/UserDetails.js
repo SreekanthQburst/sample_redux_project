@@ -12,7 +12,7 @@ export default function UserDetails() {
   
 
   return <div className="user-details">
-      <img src={user.picture.large}/>
+      <img src={user.picture.large} alt="Loading"/>
       <div className="details">
         <div className="name">{`${user.name.title} ${user.name.first} ${user.name.last}`}</div>
       
