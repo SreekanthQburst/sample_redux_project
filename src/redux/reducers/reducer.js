@@ -11,7 +11,7 @@ export const listReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     // loading api
     case ActionTypes.LOADING:
-      return { ...state, loading: true };
+      return { ...state, loading: true,list:[],subList:[] };
     // error handling
     case ActionTypes.ERROR:
       return { ...state, error: payload, loading: false };
@@ -21,18 +21,13 @@ export const listReducer = (state = initialState, { type, payload }) => {
         ...state,
         loading: false,
         list: payload,
-        subList: payload.slice(0, 10),
+        subList: payload.slice((state.page - 1) * 10, (state.page - 1) * 10 + 10),
       };
     case ActionTypes.UPDATE_PAGE:
       return {
         ...state,
         page: payload,
         subList: state.list.slice((payload - 1) * 10, (payload - 1) * 10 + 10),
-      };
-      case ActionTypes.REMOVE_SUBLIST:
-      return {
-        ...state,
-        subList: [],
       };
     default:
       return state;
