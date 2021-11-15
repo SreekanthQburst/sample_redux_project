@@ -24,6 +24,6 @@ export const selectedUser = (user) => {
     payload: user,
   };
 };
-export const remove_sublist=()=>{
-  return {type:ActionTypes.REMOVE_SUBLIST}
-}
+export const remove_sublist = () => {
+  return { type: ActionTypes.REMOVE_SUBLIST };
+};

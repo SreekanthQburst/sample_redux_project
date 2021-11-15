@@ -4,7 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 // css
 import "../css/List.css";
-import { selectedUser, setUsers, updatePage } from "../redux/actions/UserActions";
+import {
+  selectedUser,
+  setUsers,
+  updatePage,
+} from "../redux/actions/UserActions";
 
 export default function List() {
   const dispatch = useDispatch();
@@ -29,10 +33,10 @@ export default function List() {
   };
 
   // navigate to userdetails page
-  const UserDetails=(user)=>{
-    dispatch(selectedUser(user))
-    navigate(`/user/${user.login.username}`)
-  }
+  const UserDetails = (user) => {
+    dispatch(selectedUser(user));
+    navigate(`/user/${user.login.username}`);
+  };
   return (
     <div className="users">
       {users.loading ? (
@@ -46,7 +50,7 @@ export default function List() {
                 className="card"
                 onClick={() => UserDetails(user)}
               >
-                <img src={user.picture.large} alt="Loading"/>
+                <img src={user.picture.large} alt="Loading" />
                 <span className="name">{`Name: ${user.name.title} ${user.name.first} ${user.name.last}`}</span>
                 <span className="email">{`Email: ${user.email}`}</span>
               </div>
@@ -55,7 +59,7 @@ export default function List() {
           <div className="buttons">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((key) => (
               <span
-              key={key}
+                key={key}
                 className={`${key === users.page ? "selected" : ""}`}
                 onClick={() => getList(key)}
               >
