@@ -1,0 +1,27 @@
+.user-details{
+    display: flex;
+    margin: 5rem;
+}
+.user-details img{
+    width: 25%;
+}
+.user-details .details{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+}
+.user-details .details>div{
+    margin-top: 1rem;
+}
+.user-details .details .name{
+    font-size: 2rem;
+}
+.user-details .details .location {
+    display: flex;
+    flex-direction: column;
+    color: rgb(204, 88, 88);
+}
+.user-details .details .location span{
+    margin-bottom: .3rem;
+    color: #000000;
+}

@@ -1,0 +1,43 @@
+.users {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+}
+.users .loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.users .container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.users .card {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  height: 14rem;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgb(216, 216, 216);
+  cursor: pointer;
+}
+.users .card img {
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+.users .buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.users .buttons span {
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: rgb(129, 147, 224);
+  padding: 1rem;
+}
+.users .buttons .selected {
+  background-color: rgb(129, 224, 169);
+}
