@@ -3,5 +3,6 @@ export const ActionTypes = {
   ERROR: "ERROR",
   SET_USERS: "SET_USERS",
   UPDATE_PAGE: "UPDATE_PAGE",
+  CLEAN_DATA: "CLEAN_DATA",
   SELECTED_USER: "SELECTED_USER",
 };

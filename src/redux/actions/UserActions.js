@@ -17,13 +17,15 @@ export const setUsers = () => async (dispatch) => {
 export const updatePage = (page) => {
   return { type: ActionTypes.UPDATE_PAGE, payload: page };
 };
+export const clean_data = () => {
+  return { type: ActionTypes.CLEAN_DATA };
+};
+
+// actions for user details
 
 export const selectedUser = (user) => {
   return {
     type: ActionTypes.SELECTED_USER,
     payload: user,
   };
-};
-export const remove_sublist = () => {
-  return { type: ActionTypes.REMOVE_SUBLIST };
 };

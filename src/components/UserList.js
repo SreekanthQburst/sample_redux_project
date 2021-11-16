@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 // css
 import "../css/List.css";
 import {
+  clean_data,
   selectedUser,
   setUsers,
   updatePage,
@@ -17,8 +18,8 @@ export default function List() {
   console.log(users);
 
   useEffect(() => {
-    console.log("fslf");
     dispatch(setUsers());
+    return () => dispatch(clean_data());
   }, []);
 
   // get list of users in a page
