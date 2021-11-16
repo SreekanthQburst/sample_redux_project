@@ -4,19 +4,22 @@ import UserDetails from "./components/UserDetails";
 import NoResult from "./components/NoResult";
 
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import { store, persistor } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <Router>
-          <Routes>
-            <Route exact path="/user/:userid" element={<UserDetails />} />
-            <Route exact path="/" element={<UserList />} />
-            <Route path="*" element={<NoResult />} />
-          </Routes>
-        </Router>
-      </div>
+      <PersistGate loading={null} persistor={persistor}>
+        <div className="App">
+          <Router>
+            <Routes>
+              <Route exact path="/user/:userid" element={<UserDetails />} />
+              <Route exact path="/" element={<UserList />} />
+              <Route path="*" element={<NoResult />} />
+            </Routes>
+          </Router>
+        </div>
+      </PersistGate>
     </Provider>
   );
 }

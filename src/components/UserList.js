@@ -14,16 +14,10 @@ export default function List() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const users = useSelector((state) => state.users);
-
-  // fetch random users list
-  // const fetchUsers = async () => {
-  //   const response = await api.get("/?results=10").catch((e) => {
-  //     console.log("error : ", e);
-  //   });
-  //   dispatch(setUsers(response.data.results));
-  // };
+  console.log(users);
 
   useEffect(() => {
+    console.log("fslf");
     dispatch(setUsers());
   }, []);
 
